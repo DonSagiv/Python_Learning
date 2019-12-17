@@ -19,14 +19,14 @@ linkedList.iterate()
 
 # adding a value
 valueToAdd = 2
-print('Adding Value {}'.format(valueToAdd))
+print('Adding Value: {}'.format(valueToAdd))
 linkedList.add(valueToAdd)
 
 linkedList.iterate()
 
 # removing a value
 itemToRemove = 2
-print('Removing {} from linked list.'.format(itemToRemove))
+print('Removing from linked list: {}.'.format(itemToRemove))
 linkedList.removeFirstEquals(itemToRemove)
 
 linkedList.iterate()
@@ -34,6 +34,13 @@ linkedList.iterate()
 #removing the first value
 removedValue = linkedList.removeFirst()
 print('Removed first value: {}.'.format(removedValue))
+
+linkedList.iterate()
+
+insertValue = 6
+insertIndex = 2
+print('Inserting {} into index {}.'.format(insertValue, insertIndex))
+linkedList.insert(insertIndex, insertValue)
 
 linkedList.iterate()
 

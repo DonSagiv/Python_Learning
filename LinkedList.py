@@ -26,6 +26,32 @@ class SinglyLinkedList():
 
         self.count += 1
 
+    def insert(self, index, value):
+        ''' Inserts the value to the nth index of the linked list. If n is greater than number of items, sets as last value.'''
+
+        # If index is greater than count, set tail to the new value.
+        if(index > self.count):
+            self.add(value)
+            return
+
+        newNode = SinglyLinkedListNode(value)
+
+        # If index is 0, set head to new value.
+        if(index == 0):
+            newNode.next = self.head
+            self.head = newNode
+            return
+
+        node = self.head
+
+        for i in range(0, index - 1):
+            node = node.next
+        
+        newNode.next = node.next
+        node.next = newNode
+
+        self.count += 1
+
     def removeFirst(self):
         '''Removes the first (head) node from the singly-linked list.'''
 
@@ -33,7 +59,7 @@ class SinglyLinkedList():
         if self.head == None:
             return
 
-        headValue = self.head.value;
+        headValue = self.head.value
 
         self.head = self.head.next
 
